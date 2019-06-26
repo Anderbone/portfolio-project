@@ -2,13 +2,13 @@
 <!doctype html>
 <html lang="en">
   <head>
-{% load staticfiles %}
+      {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
-    <title>Jiyu yan's Blog</title>
+    <title>{{ blog.title }}</title>
 
 {#    <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">#}
 
@@ -76,7 +76,7 @@
       <a class="nav-item nav-link" href="https://twitter.com/Anderesurrect">Twitter </a>
 {#                       <span class="sr-only">(current)</span>#}
       <a class="nav-item nav-link" href="{% static 'cv2.pdf' %}">Resume</a>
-      <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+      <a class="nav-item nav-link active" href="{% url 'allblogs' %}">Blog</a>
 {#      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
     </div>
   </div>
@@ -84,50 +84,15 @@
 </header>
 
 <main role="main">
+<div class="container">
 
-  <section class="jumbotron text-center">
-    <div class="container">
-      <h1 class="jumbotron-heading">Incredible</h1>
-      <p class="lead text-muted">Now and here</p>
-      <p>
-        <a href="mailto:yanchiyu@outlook.com" class="btn btn-primary my-2">Email me</a>
-{#        <a href="#" class="btn btn-secondary my-2">Secondary action</a>#}
-      </p>
-        <img src="{% static 'fencing.jpg' %}" height="100"/>
-    </div>
-  </section>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
+       <h1 class="text-center pt-3">{{ blog.title }}</h1>
+              <p class="text-center"> {{ blog.pub_date }} </p>
+    <img class="img-fluid" src="{{ blog.image.url }}"/>
 
-      <div class="row">
-
-          {% for job in jobs.all %}
-        <div class="col-md-4">
-          <div class="card mb-4 shadow-sm">
-{#            <svg class="bd-placeholder-img card-img-top" width="100%" height="100" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">22</text></svg>#}
-{#            <svg class="bd-placeholder-img card-img-top" width="100%" height="100" xmlns="{{ job.image.url }}" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">22</text></svg>#}
-              <img class="card-img-top" height="200" src="{{ job.image.url }}"/>
-            <div class="card-body">
-              <p class="card-text">{{ job.summary }}</p>
-{#              <div class="d-flex justify-content-between align-items-center">#}
-{#                <div class="btn-group">#}
-{#                  <button type="button" class="btn btn-sm btn-outline-secondary">View</button>#}
-{#                  <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>#}
-{#                </div>#}
-{#                <small class="text-muted">9 mins</small>#}
-{#              </div>#}
             </div>
-          </div>
-        </div>
-          {% endfor %}
-
-
-      </div>
-    </div>
-  </div>
-
-</main>
+<p>{{ blog.body }}</p>
 
 <footer class="text-muted">
   <div class="container">
