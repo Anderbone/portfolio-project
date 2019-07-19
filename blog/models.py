@@ -11,7 +11,7 @@ class Blog(models.Model):
     def __str__(self):
         return self.title
 
-    def summary(self):
+    def get_summary(self):
         return self.summary
 
     def pub_date_pretty(self):

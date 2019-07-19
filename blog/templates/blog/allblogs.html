@@ -103,7 +103,7 @@
               <a href="{% url 'detail' blog.id %}" ><img class="img-fluid" height="200" src="{{ blog.image.url }}"/> </a>
             <div class="card-body">
               <a href="{% url 'detail' blog.id %}"  > <p class="card-text">{{ blog.title }}</p></a>
-               <p>{{ blog.body }}</p>
+               <p>{{ blog.get_summary }}</p>
                 {{ blog.pub_date_pretty }}
 {#              <div class="d-flex justify-content-between align-items-center">#}
 {#                <div class="btn-group">#}
