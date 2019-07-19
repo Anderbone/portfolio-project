@@ -1,7 +1,9 @@
 from django.shortcuts import render
-
+import sys
+sys.path.append('../')
 from .models import Job
-from ..blog.models import Blog
+# from ..blog.models import Blog
+from blog import Blog
 
 # Create your views here.
 
