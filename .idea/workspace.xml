@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="20193734-6f2c-49b4-a57a-d06714d8fd01" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jobs/templates/jobs/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/jobs/templates/jobs/home.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -27,10 +28,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/jobs/templates/jobs/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="101" column="112" selection-start-line="101" selection-start-column="112" selection-end-line="101" selection-end-column="112" />
+            <state relative-caret-position="501">
+              <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#main#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="e#5095#5102#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -122,7 +124,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="326" />
+    <option name="x" value="241" />
     <option name="width" value="1412" />
     <option name="height" value="822" />
   </component>
@@ -318,7 +320,7 @@
       <workItem from="1563377592895" duration="955000" />
       <workItem from="1563445910003" duration="61000" />
       <workItem from="1563570892657" duration="9896000" />
-      <workItem from="1563637836243" duration="3525000" />
+      <workItem from="1563637836243" duration="4402000" />
     </task>
     <task id="LOCAL-00001" summary="before admin">
       <created>1560548605320</created>
@@ -366,7 +368,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43682000" />
+    <option name="totallyTimeSpent" value="44559000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-2" y="0" width="1924" height="1084" extended-state="6" />
@@ -386,7 +388,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32912722" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.12605043" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="11" visible="true" weight="0.32668066" />
       <window_info anchor="bottom" id="Python Console" order="12" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -561,10 +563,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jobs/templates/jobs/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="101" column="112" selection-start-line="101" selection-start-column="112" selection-end-line="101" selection-end-column="112" />
+        <state relative-caret-position="501">
+          <caret line="105" column="6" selection-start-line="105" selection-start-column="6" selection-end-line="105" selection-end-column="6" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#main#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#main#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="e#5095#5102#0#HTML" expanded="true" />
           </folding>
         </state>
       </provider>
