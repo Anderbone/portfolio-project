@@ -20,9 +20,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 import jobs.views
 
+from django.contrib.staticfiles.views import serve
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # empty because it's homepage
     path('', jobs.views.home, name='home'),
     path('blog/', include('blog.urls')),
+
+    path('favicon.ico', serve, {'path': 'media/images/favicon.ico'})
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
