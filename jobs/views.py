@@ -10,6 +10,8 @@ from blog.models import Blog
 # def home(request):
 #     jobs = Job.objects
 #     return render(request, 'jobs/home.html', {'jobs':jobs})
+def webcv(request):
+    return render(request, 'jobs/cv.html')
 
 def home(request):
     blogs = Blog.objects

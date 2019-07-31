@@ -26,6 +26,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # empty because it's homepage
     path('', jobs.views.home, name='home'),
+    path('', jobs.views.webcv, name='webcv'),
     path('blog/', include('blog.urls')),
 
     # path('favicon.ico', serve, {'path': 'media/images/favicon.ico'})
