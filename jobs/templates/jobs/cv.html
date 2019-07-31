@@ -20,6 +20,24 @@ header { width: 100%; height: 80px;}
 blockquote p { font-size: 14px; }
 </style>
 </head>
+
+<nav class="navbar navbar-expand-lg  navbar-light">
+  <a class="navbar-brand" href="{% url 'home' %}">Jiyu yan</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav mr-auto">
+      <a class="nav-item nav-link" href="https://www.linkedin.com/in/jiyu-yan/">LinkedIn</a>
+{#                       <span class="sr-only">(current)</span>#}
+{#      <a class="nav-item nav-link" href="{% static 'cv2.pdf' %}">Resume</a>#}
+      <a class="nav-item nav-link" href="{% url 'webcv' %}">Resume</a>
+      <a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+{#      <a class="nav-item nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>#}
+    </div>
+  </div>
+</nav>
+
 <body>
 
 <div class="container">
