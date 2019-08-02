@@ -70,7 +70,7 @@ def graph(request):
     # Store components
     script, div = components(plot)
 
-    return render(request, 'home.html', {'script': script, 'div': div})
+    return render(request, 'graph.html', {'script': script, 'div': div})
 
 
 def combo(request):
