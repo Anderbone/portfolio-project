@@ -15,7 +15,8 @@ from bokeh.models import HoverTool, LassoSelectTool, WheelZoomTool, PointDrawToo
 
 from bokeh.palettes import Category20c, Spectral6
 from bokeh.transform import cumsum
-from .models import Products
+from bokehApp.models import Products
+# from .models import Products
 from numpy import pi
 import pandas as pd
 from bokeh.resources import CDN
