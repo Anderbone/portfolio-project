@@ -21,7 +21,7 @@ from numpy import pi
 import pandas as pd
 from bokeh.resources import CDN
 
-def graph(request):
+def graph0(request):
     plot = figure()
     plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
 
@@ -38,7 +38,7 @@ def starter(request):
     return render(request, 'starter.html', {'script': script, 'div': div})
 
 
-def home(request):
+def graph(request):
     x = [1, 2, 3, 4, 5]
     y = [6, 10, 2, -4, 10]
     title = 'My Leaning Graph'
