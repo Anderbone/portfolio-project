@@ -67,7 +67,7 @@ blockquote p { font-size: 14px; }
 {#            <a href="mailto:yanchiyu@outlook.com" >yanchiyu@outlook.com</a>#}
 {#            <a class="nav-item nav-link" href="{% static 'cv2.pdf' %}">Resume</a>#}
             <div class="col-md-12">
-                A warrior|  <a href="mailto:yanchiyu@outlook.com" >yanchiyu@outlook.com</a>| <a href="{% static 'cv3.pdf' %}">[Get CV in PDF]</a> | <a href="{% url 'webcv' %}">[English]</a>
+                A warrior|  <a href="mailto:yanchiyu@outlook.com" >yanchiyu@outlook.com</a>| <a href="{% static 'cv_zh2.pdf' %}">[简历pdf]</a> | <a href="{% url 'webcv' %}">[English]</a>
             </div>
         </div>
     </div>
@@ -83,12 +83,12 @@ blockquote p { font-size: 14px; }
 {#</p></div>#}
 
 <div class="row"><p>
-  <div class="col-md-2">EDUCATION</div>
+  <div class="col-md-2">教育经历</div>
   <div class="col-md-10">
     <div class="row">
-      <div class="col-md-12"><em>M.S.</em>, The University of Warwick<span class="pull-right">2018.10 - 2019.10</span></div>
-      <div class="col-md-12">Major: Computer Science&nbsp;&nbsp;&nbsp;GPA:&nbsp;72.5/100(First class)</div>
-      <div class="col-md-12">Supervisor: <a href="https://www.dcs.warwick.ac.uk/~liganghe/">Dr.Ligang He</a></div>
+      <div class="col-md-12"><em>硕士</em>, 华威大学<span class="pull-right">2018.10 - 2019.10</span></div>
+      <div class="col-md-12">专业:计算机科学&nbsp;&nbsp;&nbsp;GPA:&nbsp;72.5/100(First class)</div>
+      <div class="col-md-12">导师: <a href="https://www.dcs.warwick.ac.uk/~liganghe/">Dr.Ligang He</a></div>
 {#      <div class="col-md-12">GPA:72.5/100(First class)</div>#}
     </div>
     <p></p>
@@ -98,15 +98,16 @@ blockquote p { font-size: 14px; }
 {#    </div>#}
 {#    <p></p>#}
     <div class="row">
-      <div class="col-md-12"><em>M.S.</em>, University of Electronic Science and Technology of China<span class="pull-right">2015.9 - 2018.7</span></div>
-      <div class="col-md-12">Major: Electronics and Communication Engineering&nbsp;&nbsp; &nbsp;GPA:&nbsp;3.4/4.0</div>
-      <div class="col-md-12">Supervisor: <a href="http://faculty.uestc.edu.cn/yangning/zh_CN/index/151869/list/index.htm">Dr.Ning Yang</a></div>
+      <div class="col-md-12"><em>硕士</em>, 电子科技大学<span class="pull-right">2015.9 - 2018.7</span></div>
+      <div class="col-md-12">专业:电子与通信工程&nbsp;&nbsp; &nbsp;GPA:&nbsp;3.4/4.0</div>
+      <div class="col-md-12">导师:
+          <a href="http://faculty.uestc.edu.cn/yangning/zh_CN/index/151869/list/index.htm">Dr.Ning Yang</a></div>
 {#        <div class="col-md-12">GPA:3.4/4.0</div>#}
     </div>
     <p></p>
     <div class="row">
-      <div class="col-md-12"><em>B.E.</em>, University of Electronic Science and Technology of China<span class="pull-right">2011.9 - 2015.7</span></div>
-      <div class="col-md-12">Major: Communication Engineering&nbsp;&nbsp;&nbsp;GPA:&nbsp;3.7/4.0</div>
+      <div class="col-md-12"><em>学士</em>, 电子科技大学<span class="pull-right">2011.9 - 2015.7</span></div>
+      <div class="col-md-12">专业:通信工程&nbsp;&nbsp;&nbsp;GPA:&nbsp;3.7/4.0</div>
 {#        <div class="col-md-12">GPA:3.7/4.0</div>#}
     </div>
   </div>
@@ -245,16 +246,16 @@ blockquote p { font-size: 14px; }
 {#</div>#}
 
 <div class="row"><p>
-  <div class="col-md-2">PROJECTS</div>
+  <div class="col-md-2">项目</div>
   <div class="col-md-10">
 
     <div class="row">
       <div class="col-md-12">
-        <div>Optimizing distributed training of deep neural networks by reducing information transmission<span class="pull-right">2019.2 - Present</span></div>
+        <div>通过减少信息传输量优化分布式深度神经网络训练<span class="pull-right">2019.2 - 至今</span></div>
 {#     With the help of ., optimize distributed training of deep neural networks based on Facebook AI research#}
         <ul>
-          <li>Use PyTorch, NCCL, remote GPUs etc. based on <a href="https://github.com/pytorch/fairseq">Facebook AI research</a> </li>
-          <li>contributed the ideas of using stochastic gradient push for training a Chinese-English transformer</li>
+          <li>利用PyTorch, NCCL,以及远程GPU, 基于 <a href="https://github.com/pytorch/fairseq">Facebook AI research</a> </li>
+          <li>通过随机梯度等方面的算法, 优化分布式深度网络中英文翻译模型训练</li>
         </ul>
       </div>
     </div>
@@ -262,9 +263,9 @@ blockquote p { font-size: 14px; }
 
     <div class="row">
       <div class="col-md-12">
-        <div>Bidding bots for four auction games implemented with python <span class="pull-right">2019.1 - 2019.4</span></div>
+        <div>利用python实现针对4种特定拍卖游戏的竞价机器人 <span class="pull-right">2019.1 - 2019.4</span></div>
         <ul>
-          <li>The second bot beats almost all opponents (7.2/7.5) among 60+ bots</li>
+          <li>第二个机器人取得了 (7.2/7.5)的高分, 击败了60+ 个对手中的大多数</li>
 {#          <li>developed 4 modules including Chinese word segmentation, POSTagging, NER and Dependency parsing in a perceptron algorithm framework.</li>#}
 {#          <li>developed the RESTful API and contributed to the development of website.</li>#}
         </ul>
@@ -274,11 +275,11 @@ blockquote p { font-size: 14px; }
 
       <div class="row">
       <div class="col-md-12">
-        <div>Image classification and data analysis with machine learning <span class="pull-right">2019.1 - 2019.3</span></div>
+        <div>利用机器学习实现图片分类及数据分析 <span class="pull-right">2019.1 - 2019.3</span></div>
 
         <ul>
-          <li>Implement a reasonable CNN architecture to solve binary image classification problem</li>
-          <li>A RNN architecture for pollution analysis task</li>
+          <li>实现了可靠的CNN模型解决图像分类问题</li>
+          <li>实现用于对数据分析的RNN模型</li>
 {#          <li>developed the RESTful API and contributed to the development of website.</li>#}
         </ul>
       </div>
@@ -287,11 +288,11 @@ blockquote p { font-size: 14px; }
 
         <div class="row">
             <div class="col-md-12">
-        <div>Sentiment Classification for social media (Twitter) <span class="pull-right">2018.10 - 2018.12</span></div>
+        <div>对社交媒体(推特)信息的情感分析研究 <span class="pull-right">2018.10 - 2018.12</span></div>
 
         <ul>
-          <li>Where sentiment is one of {positive, negative, neutral}, Apply text preprocessing and feature extracting</li>
-          <li>Build a logistic regression model with 65% accuracy.</li>
+          <li>情绪是{正面，负面，中立}之一，应用文本预处理和特征提取</li>
+          <li>构建逻辑回归模型，准确率为65％</li>
 {#          <li>developed the RESTful API and contributed to the development of website.</li>#}
         </ul>
       </div>
@@ -301,12 +302,12 @@ blockquote p { font-size: 14px; }
 
       <div class="row">
       <div class="col-md-12">
-        <div>Data Analysis of Abortion in China from 1991 to 2015 Based on <a href="https://www.cpc.unc.edu/projects/china">CHNS</a> <span class="pull-right">2018.10 - 2018.12</span></div>
+        <div>中国从1991至2015年人工流产的数据分析, 基于 <a href="https://www.cpc.unc.edu/projects/china">CHNS</a>数据库 <span class="pull-right">2018.10 - 2018.12</span></div>
 {#    What associated factors behind induced abortion in China: A Study on CHNS from 1991 to 2015#}
         <ul>
-          <li>Produced datasets with post-bortion women among 18 to 52 years old women from 1997 to 2015 in 9 provinces in China</li>
-          <li>Study associated factors behind induced abortion such as education, health, jobs, son/daughter ratio</li>
-          <li>The strength of policy implementation do have a huge impact on women's induced abortion ratio</li>
+          <li>分析整理1997年至2015年，中国9个省的18至52岁妇女参与了堕胎后妇女的数据集</li>
+          <li>研究人工流产背后的相关因素，如教育，健康，工作，子女性别比例</li>
+{#          <li>The strength of policy implementation do have a huge impact on women's induced abortion ratio</li>#}
 
         </ul>
       </div>
@@ -315,11 +316,11 @@ blockquote p { font-size: 14px; }
 
         <div class="row">
      <div class="col-md-12">
-        <div>Mobile Social Network demonstration project(ONE simulator, Java)  <span class="pull-right">2017.3 - 2018.7</span></div>
+        <div>移动社会网络演示系统(ONE simulator, Java)  <span class="pull-right">2017.3 - 2018.7</span></div>
 
         <ul>
 {#         {}{}#}
-          <li>Complete master's thesis <a href="http://gb.oversea.cnki.net/KCMS/detail/detail.aspx?filename=1018708850.nh&dbcode=CMFD&dbname=CMFDREF">Research on Multicast Routing Algorithms in Mobile Social Networks</a> based on this project</li>
+          <li>基于项目完成论文<a href="http://gb.oversea.cnki.net/KCMS/detail/detail.aspx?filename=1018708850.nh&dbcode=CMFD&dbname=CMFDREF">移动社会网络中的多播路由算法研究</a> </li>
 {#          <li>developed 4 modules including Chinese word segmentation, POSTagging, NER and Dependency parsing in a perceptron algorithm framework.</li>#}
 {#          <li>developed the RESTful API and contributed to the development of website.</li>#}
         </ul>
@@ -358,7 +359,7 @@ blockquote p { font-size: 14px; }
 
 
 <div class="row"></p>
-  <div class="col-md-2">EXPREIENCES</div>
+  <div class="col-md-2">经历</div>
   <div class="col-md-10">
 
 {#    <div class="row">#}
@@ -368,13 +369,13 @@ blockquote p { font-size: 14px; }
 
       <div class="row">
       <div class="col-md-12">
-        <div> University(UESTC) fencing team Captain<span class="pull-right">2017 - 2018.7</span></div>
+        <div> 电子科大击剑校队队长,<span class="pull-right">2017 - 2018.7</span></div>
 {#    What associated factors behind induced abortion in China: A Study on CHNS from 1991 to 2015#}
         <ul>
-          <li>NingGuang Fencing club student coach</li>
-          <li>Long-term adherence to leading students and faculty members for training</li>
-            <li><em>The champion</em> in ChengDian cup Fencing team competition</li>
-            <li><em>The Third group</em> in VANGO Chengdu Fencing Tournament</li>
+          <li>凝光击剑俱乐部学生教练</li>
+          <li>长期带队坚持训练, 对学生及教职工进行定期指导培训</li>
+            <li>成电杯击剑男子团体冠军,</li>
+            <li>万国成都击剑锦标赛团体第三名(电子科大队)</li>
 
         </ul>
       </div>
@@ -384,11 +385,11 @@ blockquote p { font-size: 14px; }
 
       <div class="row">
       <div class="col-md-12">
-        <div>Teaching assistant(Course TCP/IP)<span class="pull-right">2016.9 - 2017.7</span></div>
+        <div>TCP/IP助教<span class="pull-right">2016.9 - 2017.7</span></div>
 {#    What associated factors behind induced abortion in China: A Study on CHNS from 1991 to 2015#}
         <ul>
-          <li>Responsible for the lectures and Q&A of nearly 100 students in the experimental class</li>
-          <li>The correction of the course report and assignment comments</li>
+          <li>负责近百人实验课的讲课及答疑</li>
+          <li>课程报告的批改,作业批注,成绩统计</li>
 {#          <li>The strength of policy implementation do have a impact on women's induced abortion ratio</li>#}
 
         </ul>
@@ -403,10 +404,10 @@ blockquote p { font-size: 14px; }
 </p></div>
 
 <div class="row"></p>
-  <div class="col-md-2">TALKS</div>
+  <div class="col-md-2">演示</div>
   <div class="col-md-10">
 {#    <div><a href="res/2018-10-16-ccl-sws.compressed.pdf">How sudden censorship can increase access to information</a> <span class="pull-right">2019.1</span></div>#}
-        <div> <a href="{% static 'censorship.pdf' %}">How sudden censorship can increase access to information</a> <span class="pull-right">2019.1</span></div>
+        <div> <a href="{% static 'censorship.pdf' %}">突如其来的审查如何增加了用户信息量的获取</a> <span class="pull-right">2019.1</span></div>
 {#    <div><a href="res/2018-08-19-nlpcc-sws.compressed.pdf">Tips for improving the clarity of your paper (in Chinese)</a><span class="pull-right">2018.08</span></div>#}
   </div>
 </p></div>
@@ -439,30 +440,30 @@ blockquote p { font-size: 14px; }
 {#  </div>#}
 {#</p></div>#}
 <div class="row"></p>
-  <div class="col-md-2">AWARDS</div>
+  <div class="col-md-2">获奖</div>
   <div class="col-md-10">
-    <div> Second place in Warwick National Novices Fencing Tournament <span class="pull-right">2018.12</span></div>
-    <div>School Graduate Scholarship <span class="pull-right">2016</span></div>
-    <div>School People's Scholarship<span class="pull-right">2012, 2013</span></div>
+    <div> 华威全国初级击剑锦标赛第二名 <span class="pull-right">2018.12</span></div>
+    <div>研究生奖学金 <span class="pull-right">2016</span></div>
+    <div>人民奖学金<span class="pull-right">2012, 2013</span></div>
   </div>
 </p></div>
 
 <div class="row"></p>
-  <div class="col-md-2">CERTIFICATES</div>
+  <div class="col-md-2">认证</div>
   <div class="col-md-10">
-    <div>National Computer Rank Examination level 3 <span class="pull-right">Excellent</span></div>
-    <div>National Computer Rank Examination level 2-C language <span class="pull-right">Qualified</span></div>
-    <div>Listening 6.5 Reading 7.5 Writing 6.0 Speaking 6.5 Overall 6.5<span class="pull-right">Ielts</span></div>
+    <div> 三级网络技术 <span class="pull-right">优秀</span></div>
+    <div> 二级C语言 <span class="pull-right">通过</span></div>
+    <div>听力 6.5 阅读 7.5 书写 6.0 口语 6.5 总分 6.5<span class="pull-right">雅思</span></div>
   </div>
 </p></div>
 
 
 <div class="row"></p>
-  <div class="col-md-2">SKILLS</div>
+  <div class="col-md-2">技能</div>
   <div class="col-md-10">
-    <div><em>Technique summary</em>: Python, Linux, C, PostgreSQL, Django, HTML, R, PHP, Java</div>
-    <div><em>Tools</em>: <a href="https://github.com/Anderbone">Github</a>, PyTorch,  VPS,  Docker, Pycharm, Nginx, Jupyter </div>
-    <div><em>Language</em>: English, Mardarin(Chinese)</div>
+    <div><em>技术</em>: Python, Linux, C, PostgreSQL, Django, HTML, R, PHP, Java</div>
+    <div><em>工具</em>: <a href="https://github.com/Anderbone">Github</a>, PyTorch,  VPS,  Docker, Pycharm, Nginx, Jupyter </div>
+{#    <div><em>Language</em>: English, Mardarin(Chinese)</div>#}
 {#    <div><em>Experience</em>: Git, SVN, Valgrind, Apache, Nginx, django (Python)</div>#}
   </div>
 </p></div>
