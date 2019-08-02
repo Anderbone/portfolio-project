@@ -32,6 +32,8 @@ urlpatterns = [
     path('job/', jobs.views.webcv, name='webcv'),
     path('job/zh', jobs.views.webcvzh, name='webcvzh'),
 
+    # path('graph/', include('bokehApp.urls')),
+
 
     # path('favicon.ico', serve, {'path': 'media/images/favicon.ico'})
 ] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
