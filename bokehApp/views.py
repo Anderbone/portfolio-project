@@ -22,6 +22,9 @@ from numpy import pi
 import pandas as pd
 from bokeh.resources import CDN
 
+from bokeh.palettes import Viridis3
+from bokeh.layouts import gridplot
+
 def graph0(request):
     plot = figure()
     plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
@@ -48,8 +51,8 @@ def graph(request):
                   x_axis_label='High and Lows',
                   y_axis_label='Learning Topics',
 
-                  plot_width=300,
-                  plot_height=300, tools="",
+                  plot_width=400,
+                  plot_height=400, tools="",
                   toolbar_location=None, )
 
     # Formatting Graph
@@ -68,9 +71,15 @@ def graph(request):
     plot.outline_line_alpha = 0.2
     plot.outline_line_color = "purple"
 
-    # Store components
-    script, div = components(plot)
+    p2 = figure(plot_width=250, plot_height=250, title=None)
+    p2.triangle(x, y, size=10, color=Viridis3[1])
+    p3 = figure(plot_width=250, plot_height=250, title=None)
+    p3.square(x, y, size=10, color=Viridis3[2])
 
+    grid = gridplot([plot, p2], p3)
+    # Store components
+    # script, div = components(plot)
+    script, div = components(grid)
     return render(request, 'graph.html', {'script': script, 'div': div})
 
 
