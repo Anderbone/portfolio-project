@@ -121,7 +121,7 @@ def graph(request):
     # spl = CubicSpline(year, abortion)
     # y_smooth = spl(xvals)
     # p0.line(xvals, y_smooth)
-    x2 = np.linspace(x[0], x[-1], 100)
+    x2 = np.linspace(year[0], year[-1], 100)
     y2 = interpolate.pchip_interpolate(year, abortion, x2)
     p0.plot(x2, y2)
     p0.plot(x, y, "o")
