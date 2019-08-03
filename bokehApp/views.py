@@ -32,7 +32,7 @@ from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, RangeTool
 from bokeh.sampledata.stocks import AAPL
 
-# from scipy.interpolate import CubicSpline, pchip_interpolate
+from scipy.interpolate import CubicSpline
 # from scipy import interpolate
 
 def graph0(request):
@@ -116,7 +116,7 @@ def graph(request):
     year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
 
-    p0 = figure(title="line", plot_width=300, plot_height=300)
+    p0 = figure(title="abortion ratio", plot_width=450, plot_height=450)
     p0.line(x = [1991,1993,1997,2000,2004,2006,2009,2011,2015], y= [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9], line_join='round')
     # p0 = figure()
     # # xvals = np.linspace(1, 5, 10)
@@ -127,13 +127,19 @@ def graph(request):
     # y2 = pchip_interpolate(year, abortion, x2)
     # p0.plot(x2, y2)
     # p0.plot(year, abortion, "o")
-
+    x = [1, 3, 5]
+    y = [0, 5, 0]
+    p4 = figure()
+    xvals = np.linspace(1, 5, 10)
+    spl = CubicSpline(x, y)  # First generate spline function
+    y_smooth = spl(xvals)  # then evalute for your interpolated points
+    p4.line(xvals, y_smooth)
 
     # grid = gridplot([plot, p2], p3)
     # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
-    script, (p1div, p2div, p3div) = components((plot, column(p,select), p0))
+    script, (p1div, p2div, p3div) = components((plot, column(p,select), p4))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
