@@ -18,7 +18,7 @@ from bokeh.palettes import Category20c, Spectral6
 from bokeh.transform import cumsum
 from bokehApp.models import Products
 # from .models import Products
-from numpy import pi
+# from numpy import pi
 import numpy as np
 import pandas as pd
 from bokeh.resources import CDN
@@ -30,7 +30,7 @@ from bokeh.sampledata.iris import flowers
 
 from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, RangeTool
-from bokeh.sampledata.stocks import AAPL
+# from bokeh.sampledata.stocks import AAPL
 
 def graph0(request):
     plot = figure()
@@ -117,7 +117,7 @@ def graph(request):
     # Store components
     # script, div = components(plot)
     script, (p1div, p2div, p3div) = components((plot, column(p,select), p3))
-    script, (p1div, p2div, p3div) = components((plot, p, p3))
+    # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
     # return render(request, 'graph.html', {'script': script, 'div': div})
     return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
