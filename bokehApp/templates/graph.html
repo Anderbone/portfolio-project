@@ -9,7 +9,7 @@
     <title>CHNS Project</title>
 
           <link rel="stylesheet" href="{% static 'graph/css/graph.css' %}"/>
-
+<link href=”https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel=”stylesheet”>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -66,15 +66,31 @@
 
 
 {#   Bokeh  Graph#}
-<div class="container-fluid">
-    <div class="row">
+{#<div class="container-fluid">#}
+{#    <div class="row">#}
+{##}
+{#        <div class="col-sm-2"></div>#}
+{##}
+{#            <div class="col-lg">#}
+{#             {{div | safe}}#}
+{##}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 
-        <div class="col-sm-2"></div>
-
-            <div class="col-lg">
-             {{div | safe}}
-
+<div class="col-lg">
+    <div class="card-lg bg-light" id="maincontent">
+        <h1>What associate factors behind Chinese abortion women?</h1>
+        <h3>---A study based on CHNS from 1991 to 2015</h3>
+        <div id="homegraph">
+            {{div | safe}}
         </div>
+
+        <hr>
+        <p>
+            what isiisi?We can improve the blog post by adding additional ,
+            styles and importing google fonts. From google fonts I selected Oswald and Open Sans for use in the blog post.
+        </p>
     </div>
 </div>
 
