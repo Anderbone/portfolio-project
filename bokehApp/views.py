@@ -130,8 +130,8 @@ def graph(request):
     x = [1, 3, 5]
     y = [0, 5, 0]
     p4 = figure()
-    xvals = np.linspace(1, 5, 10)
-    spl = CubicSpline(x, y)  # First generate spline function
+    xvals = np.linspace(year[0], year[-1], 100000)
+    spl = CubicSpline(year, abortion)  # First generate spline function
     y_smooth = spl(xvals)  # then evalute for your interpolated points
     p4.line(xvals, y_smooth)
 
