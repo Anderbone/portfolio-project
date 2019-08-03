@@ -116,6 +116,8 @@ def graph(request):
     year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
 
+    p0 = figure(title="line", plot_width=300, plot_height=300)
+    p0.line(year = [1991,1993,1997,2000,2004,2006,2009,2011,2015], abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9], line_join='round')
     # p0 = figure()
     # # xvals = np.linspace(1, 5, 10)
     # # spl = CubicSpline(year, abortion)
@@ -131,7 +133,7 @@ def graph(request):
     # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
-    script, (p1div, p2div, p3div) = components((plot, column(p,select), p3))
+    script, (p1div, p2div, p3div) = components((plot, column(p,select), p0))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
