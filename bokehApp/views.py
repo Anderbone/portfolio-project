@@ -117,7 +117,7 @@ def graph(request):
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
 
     p0 = figure(title="line", plot_width=300, plot_height=300)
-    p0.line(year = [1991,1993,1997,2000,2004,2006,2009,2011,2015], abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9], line_join='round')
+    p0.line(x = [1991,1993,1997,2000,2004,2006,2009,2011,2015], y= [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9], line_join='round')
     # p0 = figure()
     # # xvals = np.linspace(1, 5, 10)
     # # spl = CubicSpline(year, abortion)
