@@ -30,7 +30,7 @@ from bokeh.sampledata.iris import flowers
 
 from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, RangeTool
-# from bokeh.sampledata.stocks import AAPL
+from bokeh.sampledata.stocks import AAPL
 
 def graph0(request):
     plot = figure()
