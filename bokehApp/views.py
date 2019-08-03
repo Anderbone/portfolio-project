@@ -24,6 +24,8 @@ from bokeh.resources import CDN
 
 from bokeh.layouts import gridplot
 from bokeh.palettes import Viridis3
+from bokeh.embed import json_item
+from bokeh.sampledata.iris import flowers
 
 def graph0(request):
     plot = figure()
@@ -79,9 +81,11 @@ def graph(request):
     # grid = gridplot([plot, p2], p3)
     grid = gridplot([[plot, p2], [None, p3]])
     # Store components
-    script, div = components(plot)
+    # script, div = components(plot)
+    script, (p1div, p2div, p3div) = components(plot, p2, p3)
     # script, div = components(p3)
-    return render(request, 'graph.html', {'script': script, 'div': div})
+    # return render(request, 'graph.html', {'script': script, 'div': div})
+    return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
 
 
 def combo(request):
