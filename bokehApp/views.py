@@ -121,7 +121,7 @@ def graph(request):
     # spl = CubicSpline(year, abortion)
     # y_smooth = spl(xvals)
     # p0.line(xvals, y_smooth)
-    x2 = np.linspace(year[0], year[-1], 100)
+    x2 = np.linspace(year[0], year[-1], 10000)
     y2 = pchip_interpolate(year, abortion, x2)
     p0.plot(x2, y2)
     p0.plot(year, abortion, "o")
@@ -131,7 +131,7 @@ def graph(request):
     # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
-    script, (p1div, p2div, p3div) = components((plot, column(p,select), p0))
+    script, (p1div, p2div, p3div) = components((plot, column(p,select), p3))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
