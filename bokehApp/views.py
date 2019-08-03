@@ -6,7 +6,6 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-import numpy as np
 import sys
 sys.path.append('../')
 
@@ -20,6 +19,7 @@ from bokeh.transform import cumsum
 from bokehApp.models import Products
 # from .models import Products
 from numpy import pi
+import numpy as np
 import pandas as pd
 from bokeh.resources import CDN
 
