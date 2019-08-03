@@ -32,7 +32,7 @@ from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, RangeTool
 from bokeh.sampledata.stocks import AAPL
 
-from scipy.interpolate import CubicSpline, pchip_interpolate
+# from scipy.interpolate import CubicSpline, pchip_interpolate
 # from scipy import interpolate
 
 def graph0(request):
@@ -116,15 +116,15 @@ def graph(request):
     year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
 
-    p0 = figure()
-    # xvals = np.linspace(1, 5, 10)
-    # spl = CubicSpline(year, abortion)
-    # y_smooth = spl(xvals)
-    # p0.line(xvals, y_smooth)
-    x2 = np.linspace(year[0], year[-1], 10000)
-    y2 = pchip_interpolate(year, abortion, x2)
-    p0.plot(x2, y2)
-    p0.plot(year, abortion, "o")
+    # p0 = figure()
+    # # xvals = np.linspace(1, 5, 10)
+    # # spl = CubicSpline(year, abortion)
+    # # y_smooth = spl(xvals)
+    # # p0.line(xvals, y_smooth)
+    # x2 = np.linspace(year[0], year[-1], 10000)
+    # y2 = pchip_interpolate(year, abortion, x2)
+    # p0.plot(x2, y2)
+    # p0.plot(year, abortion, "o")
 
 
     # grid = gridplot([plot, p2], p3)
