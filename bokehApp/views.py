@@ -32,7 +32,7 @@ from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, RangeTool
 from bokeh.sampledata.stocks import AAPL
 
-from scipy.interpolate import spline
+from scipy.interpolate import CubicSpline
 def graph0(request):
     plot = figure()
     plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
@@ -116,7 +116,8 @@ def graph(request):
 
     p0 = figure()
     xvals = np.linspace(1, 5, 10)
-    y_smooth = spline(year, abortion, xvals)
+    spl = CubicSpline(year, abortion)
+    y_smooth = spl(xvals)
     p0.line(xvals, y_smooth)
 
 
