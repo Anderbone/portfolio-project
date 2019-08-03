@@ -117,6 +117,7 @@ def graph(request):
     # Store components
     # script, div = components(plot)
     script, (p1div, p2div, p3div) = components((plot, column(p,select), p3))
+    script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
     # return render(request, 'graph.html', {'script': script, 'div': div})
     return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
