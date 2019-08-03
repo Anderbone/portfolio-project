@@ -33,6 +33,8 @@ from bokeh.models import ColumnDataSource, RangeTool
 from bokeh.sampledata.stocks import AAPL
 
 from scipy.interpolate import CubicSpline
+from scipy import interpolate
+
 def graph0(request):
     plot = figure()
     plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
@@ -115,10 +117,14 @@ def graph(request):
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
 
     p0 = figure()
-    xvals = np.linspace(1, 5, 10)
-    spl = CubicSpline(year, abortion)
-    y_smooth = spl(xvals)
-    p0.line(xvals, y_smooth)
+    # xvals = np.linspace(1, 5, 10)
+    # spl = CubicSpline(year, abortion)
+    # y_smooth = spl(xvals)
+    # p0.line(xvals, y_smooth)
+    x2 = np.linspace(x[0], x[-1], 100)
+    y2 = interpolate.pchip_interpolate(year, abortion, x2)
+    p0.plot(x2, y2)
+    p0.plot(x, y, "o")
 
 
     # grid = gridplot([plot, p2], p3)
