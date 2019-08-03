@@ -79,7 +79,7 @@ def graph(request):
     grid = gridplot([plot, p2], p3)
     # Store components
     # script, div = components(plot)
-    script, div = components(grid)
+    script, div = components(p3)
     return render(request, 'graph.html', {'script': script, 'div': div})
 
 
