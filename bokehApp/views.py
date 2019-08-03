@@ -73,16 +73,21 @@ def graph(request):
     plot.outline_line_alpha = 0.2
     plot.outline_line_color = "purple"
 
-    p2 = figure(plot_width=250, plot_height=250, title=None)
-    p2.triangle(x, y, size=10, color=Viridis3[1])
-    p3 = figure(plot_width=250, plot_height=250, title=None)
-    p3.square(x, y, size=10, color=Viridis3[2])
+    # p2 = figure(plot_width=250, plot_height=250, title=None)
+    # p2.triangle(x, y, size=10, color=Viridis3[1])
+    # p3 = figure(plot_width=250, plot_height=250, title=None)
+    # p3.square(x, y, size=10, color=Viridis3[2])
+
+    p2 = figure()
+    p2.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+    p3 = figure()
+    p3.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="red")
 
     # grid = gridplot([plot, p2], p3)
-    grid = gridplot([[plot, p2], [None, p3]])
+    # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
-    script, (p1div, p2div, p3div) = components(plot, p2, p3)
+    script, (p1div, p2div, p3div) = components((plot, p2, p3))
     # script, div = components(p3)
     # return render(request, 'graph.html', {'script': script, 'div': div})
     return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
