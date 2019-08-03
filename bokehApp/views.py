@@ -6,7 +6,8 @@ from django.http import HttpResponse
 
 
 # Create your views here.
-
+import sys
+sys.path.append('../')
 
 from django.shortcuts import render
 from bokeh.plotting import figure
