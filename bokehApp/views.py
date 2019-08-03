@@ -48,8 +48,8 @@ def graph(request):
                   x_axis_label='High and Lows',
                   y_axis_label='Learning Topics',
 
-                  plot_width=700,
-                  plot_height=700, tools="",
+                  plot_width=300,
+                  plot_height=300, tools="",
                   toolbar_location=None, )
 
     # Formatting Graph
