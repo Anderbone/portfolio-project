@@ -32,6 +32,7 @@ from bokeh.layouts import column
 from bokeh.models import ColumnDataSource, RangeTool
 from bokeh.sampledata.stocks import AAPL
 
+from scipy.interpolate import spline
 def graph0(request):
     plot = figure()
     plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
@@ -107,16 +108,23 @@ def graph(request):
     select.add_tools(range_tool)
     select.toolbar.active_multi = range_tool
 
-    # show(column(p, select))
-
     p3 = figure()
     p3.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="red")
+    # show(column(p, select))
+    year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
+    abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
+
+    p0 = figure()
+    xvals = np.linspace(1, 5, 10)
+    y_smooth = spline(year, abortion, xvals)
+    p0.line(xvals, y_smooth)
+
 
     # grid = gridplot([plot, p2], p3)
     # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
-    script, (p1div, p2div, p3div) = components((plot, column(p,select), p3))
+    script, (p1div, p2div, p3div) = components((plot, column(p,select), p0))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
