@@ -87,8 +87,8 @@ def graph(request):
 
     c1 = RdBu3[2]  # red
     c2 = RdBu3[0]  # blue
-    p3 = figure(title='Want a baby?', plot_width=200,
-                  plot_height=200)
+    p3 = figure(title='Want a baby?', plot_width=400,
+                  plot_height=400)
     source = ColumnDataSource(dict(
         x=[0, 1],
         y=[0.26, 0.19],
@@ -102,8 +102,8 @@ def graph(request):
 
     c1 = RdBu3[2]  # red
     c2 = RdBu3[0]  # blue
-    p4 = figure(title='son/daughter ratio',  plot_width=200,
-                  plot_height=200)
+    p4 = figure(title='son/daughter ratio',  plot_width=400,
+                  plot_height=400)
     source = ColumnDataSource(dict(
         x=[0, 1],
         y=[1.56, 0.82],
