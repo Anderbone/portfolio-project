@@ -140,7 +140,7 @@ def years(request):
 
     script, (p1div, p2div, p3div) = components((p0, p8, p9))
 
-    return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
+    return render(request, 'years.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
 
 
 def education(request):
