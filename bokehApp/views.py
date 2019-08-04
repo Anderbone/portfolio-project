@@ -97,7 +97,7 @@ def years(request):
 
     script, div = components(plot)
 
-    return render(request, 'background.html', {'script': script, 'div': div})
+    return render(request, 'years.html', {'script': script, 'div': div})
 
 
 def education(request):
@@ -106,7 +106,7 @@ def education(request):
 
     script, div = components(plot)
 
-    return render(request, 'background.html', {'script': script, 'div': div})
+    return render(request, 'education.html', {'script': script, 'div': div})
 
 
 def others(request):
@@ -115,7 +115,7 @@ def others(request):
 
     script, div = components(plot)
 
-    return render(request, 'background.html', {'script': script, 'div': div})
+    return render(request, 'others.html', {'script': script, 'div': div})
 
 
 def conclusion(request):
@@ -124,4 +124,4 @@ def conclusion(request):
 
     script, div = components(plot)
 
-    return render(request, 'background.html', {'script': script, 'div': div})
+    return render(request, 'conclusion.html', {'script': script, 'div': div})
