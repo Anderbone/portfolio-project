@@ -122,9 +122,9 @@ def years(request):
     # p9.square(year, abortion, size=5, color='olive', alpha=0.5)
 
     p8 = figure(title='Abortion ratio in rural/urban sites')
-    p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
-    # p8.vbar(x=[0, 1], width=0.5, bottom=0,
-           top=[7.6, 15.7], color="firebrick")
+    # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    p8.vbar(x=[0, 1], width=0.5, bottom=0,
+           top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
 
     p0 = figure(title='Abortion ratio in different years')
     xvals = np.linspace(year[0], year[-1], 100000)
