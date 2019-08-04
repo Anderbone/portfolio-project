@@ -22,6 +22,7 @@ from numpy import pi
 import numpy as np
 import pandas as pd
 from bokeh.resources import CDN
+from bokeh.palettes import RdBu3
 
 from bokeh.layouts import gridplot
 from bokeh.palettes import Viridis3
@@ -120,12 +121,19 @@ def years(request):
 
     # p9 = figure()
     # p9.square(year, abortion, size=5, color='olive', alpha=0.5)
-
+    c1 = RdBu3[2]  # red
+    c2 = RdBu3[0]  # blue
     p8 = figure(title='Abortion ratio in rural/urban sites')
+    source = ColumnDataSource(dict(
+        x=[0,1],
+        y=[7.6, 15.7],
+        color=[c1,c2],
+        label=['rural', 'urban']
+    ))
     # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
-    p8.vbar(x=[0, 1], width=0.5, bottom=0,
+    p8.vbar(x='x', width=0.5, bottom=0,
            # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
-           top=[7.6, 15.7], color="firebrick")
+           top='y', color="color", legend='label', source=source)
 
     p0 = figure(title='Abortion ratio in different years')
     xvals = np.linspace(year[0], year[-1], 100000)
