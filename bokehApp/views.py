@@ -57,7 +57,7 @@ def graph(request):
     p0 = figure()
     p0.square(year, abortion, size=5, color='olive', alpha=0.5)
     A2, B2, C2 = optimize.curve_fit(f_2, year, abortion)[0]
-    x2 = np.arange(0, 6, 0.01)
+    x2 = np.arange(1990, 2016, 0.01)
     y2 = A2 * x2 * x2 + B2 * x2 + C2
     p0.line(x2, y2)
 
