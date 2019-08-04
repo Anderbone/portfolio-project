@@ -179,7 +179,7 @@ def education(request):
 def others(request):
     c1 = RdBu3[2]  # red
     c2 = RdBu3[0]  # blue
-    p8 = figure(title='women with health insurance ratio')
+    p8 = figure(title='Want a baby?')
     source = ColumnDataSource(dict(
         x=[0,1],
         y=[0.26, 0.19],
@@ -193,7 +193,7 @@ def others(request):
 
     c1 = RdBu3[2]  # red
     c2 = RdBu3[0]  # blue
-    p9 = figure(title='women with health insurance ratio')
+    p9 = figure(title='son/daughter ratio')
     source = ColumnDataSource(dict(
         x=[0,1],
         y=[1.56, 0.82],
