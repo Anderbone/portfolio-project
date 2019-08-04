@@ -37,13 +37,22 @@ from scipy.optimize import curve_fit
 from scipy import interpolate, optimize
 
 
-def graph(request):
-    def f_2(x, A, B, C):
-        return A * x * x + B * x + C
+def f_2(x, A, B, C):
+    return A * x * x + B * x + C
 
-    # show(column(p, select))
+def graph(request):
+
     year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
+
+    p9 = figure()
+    p9.square(year, abortion, size=5, color='olive', alpha=0.5)
+    p8 = figure()
+    p8.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="red")
+
+
+    # show(column(p, select))
+
 
     # p0 = figure(title="abortion ratio", plot_width=450, plot_height=450)
     # p0.line(x = [1991,1993,1997,2000,2004,2006,2009,2011,2015], y= [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9], line_join='round')
@@ -54,53 +63,20 @@ def graph(request):
     y_smooth = spl(xvals)  # then evalute for your interpolated points
     p4.line(xvals, y_smooth)
 
-    p0 = figure()
-    p0.square(year, abortion, size=5, color='olive', alpha=0.5)
-    p3 = figure()
-    p3.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="red")
-    # A2, B2, C2 = optimize.curve_fit(f_2, year, abortion)[0]
-    # x2 = np.arange(1990, 2016, 0.01)
-    # y2 = A2 * x2 * x2 + B2 * x2 + C2
-    # p0.line(x2, y2)
+
+    A2, B2, C2 = optimize.curve_fit(f_2, year, abortion)[0]
+    x2 = np.arange(1990, 2016, 0.01)
+    y2 = A2 * x2 * x2 + B2 * x2 + C2
+    p4.line(x2, y2)
 
     # grid = gridplot([plot, p2], p3)
     # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
     # script, (p1div, p2div, p3div) = components((plot, column(p,select), p4))
-    script, (p1div, p2div, p3div) = components((p4, p0, p3))
+    script, (p1div, p2div, p3div) = components((p4, p8, p9))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
     # return render(request, 'graph.html', {'script': script, 'div': div})
     return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
-
-
-def products(request):
-    shoes = 0
-    belts = 0
-    shirts = 0
-    counts = []
-    items = ["Shoes", "Belts", "Shirts"]
-    prod = Products.objects.values()
-
-    for i in prod:
-        if "Shoes" in i.values():
-            shoes += 1
-        elif ("Belts" in i.values()):
-            belts += 1
-        elif ("Shirts" in i.values()):
-            shirts += 1
-    counts.extend([shoes, belts, shirts])
-
-    plot = figure(x_range=items, plot_height=600, plot_width=600, title="Products",
-                  toolbar_location="right", tools="pan,wheel_zoom,box_zoom,reset, hover, tap, crosshair")
-    plot.title.text_font_size = '20pt'
-
-    plot.xaxis.major_label_text_font_size = "14pt"
-    plot.vbar(items, top=counts, width=.4, color="firebrick", legend="Product Counts")
-    plot.legend.label_text_font_size = '14pt'
-
-    script, div = components(plot)
-
-    return render(request, 'products.html', {'script': script, 'div': div})
