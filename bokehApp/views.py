@@ -83,10 +83,32 @@ def graph(request):
 
 
 def background(request):
-    plot = figure()
-    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+    year = [1991, 1993, 1997, 2000, 2004, 2006, 2009, 2011, 2015]
 
-    script, div = components(plot)
+    abortion = [22.7, 15.2, 11.6, 13.5, 12.2, 6.2, 10.8, 13.1, 1.9]
+
+    total_birth = [19.68,18.09,16.57,14.03,12.29,12.09,11.95,11.93,12.07]
+    natural_growth = [12.98,
+11.45,
+10.06,
+7.58,
+5.87,
+5.28,
+4.87,
+4.79,
+4.96,
+]
+    p0 = figure(title='Total birth rate and natural growth rate in China')
+    xvals = np.linspace(year[0], year[-1], 100000)
+    spl = CubicSpline(year, total_birth)  # First generate spline function
+    y_smooth = spl(xvals)  # then evalute for your interpolated points
+    p0.line(xvals, y_smooth, color='red', legend='total birth rate')
+
+    spl = CubicSpline(year, natural_growth)  # First generate spline function
+    y_smooth = spl(xvals)  # then evalute for your interpolated points
+    p0.line(xvals, y_smooth, legend='natural growth rate')
+
+    script, div = components(p0)
 
     return render(request, 'background.html', {'script': script, 'div': div})
 
