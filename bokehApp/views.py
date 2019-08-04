@@ -36,10 +36,10 @@ from scipy.interpolate import CubicSpline
 from scipy.optimize import curve_fit
 from scipy import interpolate, optimize
 
-def f_2(x, A, B, C):
-    return A*x*x + B*x + C
 
 def graph(request):
+    def f_2(x, A, B, C):
+        return A * x * x + B * x + C
 
     # show(column(p, select))
     year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
