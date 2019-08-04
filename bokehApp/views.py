@@ -166,8 +166,8 @@ def years(request):
 
     # p9 = figure()
     # p9.square(year, abortion, size=5, color='olive', alpha=0.5)
-    c1 = RdBu3[1]  # red
-    c2 = RdBu3[3]  # blue
+    c1 = RdBu3[0]  # red
+    c2 = RdBu3[2]  # blue
     p8 = figure(title='Abortion ratio in rural/urban sites')
     source = ColumnDataSource(dict(
         x=[0,1],
