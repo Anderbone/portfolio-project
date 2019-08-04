@@ -7,6 +7,8 @@
 {#<title>Complete Example</title>#}
             <link rel="shortcut icon" href="{%static "favicon.ico"  %}" />
     <title>CHNS Project</title>
+<link rel="stylesheet" type="text/css" href="{%static "graph/css/graph.css"  %}">
+
 
           <link rel="stylesheet" href="{% static 'graph/css/graph.css' %}"/>
 <link href=”https://fonts.googleapis.com/css?family=Open+Sans|Oswald" rel=”stylesheet”>
@@ -84,22 +86,82 @@
                     <h3>A study on CHNS from 1991 to 2015</h3>
                     <p> by Jiyu yan</p>
                     <hr>
-                    <p> This study is</p>
+                    <h3>Conclusion</h3>
+                    <p>
+                    This paper mainly studied two questions.
+                        1.The change of overall abortion ratio according to 9 different survey waves and 12 provinces in China, and rural/urban site.
+                    2.To access factors such as education, health and job etc. associated with induced abortion women among women with pregnancy history in China.
+                    </p>
                     <div id="homegraph">
                         {{div | safe}}
                     </div>
+                    <p>
+                         For the first question, based on 4126 pregnancy records, it shows that the induced abortion ratio has been declined deeply from 22.7\% in 1991 to 0.019\% in 2015. It could be concluded that the strength of policy implementation do have a huge impact on women's induced abortion ratio since for every big change,(from 1991 to 1997, and from 2011 to 2015) there are some policies changed at that time.(1995 loosed one child policy, 2013 open two children policy). For provinces, the difference are also very large, Liaoning has 20.1\% abortion ratio compared with 2.9\% in Guizhou province. Women in urban(15.7\%) are more likely to do abortion than rural(7.6\%) area.
+                    </p>
                     <hr>
 {#                    <p display:inline-block>#}
                     <p>
-
+ For the second question, education, health, jobs, wages, community, son/daughter ratio are evaluated between women with abortion history and without abortion history among all women with pregnancy history between age 18-52. Some factors don't have too much effect including community they live in, wages, number of hospital checks during last pregnancy. The overall average education level of non-abortion group is higher than abortion group. Non-abortion women group also have more health insurance, more farmer, a little more healthier, compared with post-abortion group. In addiation, son/daughter ratio in post-abortion group is much higher than non-abortion group and post-abortion women are also more interested to have another baby.
                     </p>
                       <div>
 {#                        {{div2 | safe}}#}
                     </div>
+                    <h3>Extensions</h3>
+                    <p>
+                        Controlling other factors:Since the observations are not averagely distributed among 9 waves and 12 provinces in the data, it may affect the results when we sum all observations from different years and provinces to study factors such as education and health. If time is enough, those factors should be evaluated by controlling for other factors such as year, province, age and so on.
+                    </p>
+                    <p>
+                        Provinces and economy:In figure 4 those two provinces with lowest abortion ratio at south west are farest from capital Beijing, and both are also not very rich provinces. The relation between a province economy and abortion ratio may also be a question to study. Further, other factors within a province such as nationality structure of population may also affect abortion ratio.
+                    </p>
+                    <h3>Acknowledgment</h3>
+                    <p>
+                        This research uses data from China Health and Nutrition Survey (CHNS). We thank the National Institute for Nutrition and Health, China Center for Disease Control and Prevention, Carolina Population Center (P2C HD050924, T32 HD007168), the University of North Carolina at Chapel Hill, the NIH (R01-HD30880, DK056350, R24 HD050924, and R01-HD38700) and the NIH Fogarty International Center (D43 TW009077, D43 TW007709) for financial support for the CHNS data collection and analysis files from 1989 to 2015 and future surveys, and the China-Japan Friendship Hospital, Ministry of Health for support for CHNS 2009, Chinese National Human Genome Center at Shanghai since 2009, and Beijing Municipal Center for Disease Prevention and Control since 2011.
+                    </p>
                       <div>
 {#                        {{div3 | safe}}#}
                     </div>
+                    <h3>References</h3>
+                    <p>
+[1]2009, Cohort Profile: The China Health and Nutrition Survey—monitoring and understanding socio-economic and health change in China, 1989--2011
+Popkin, Barry M and Du, Shufa and Zhai, Fengying and Zhang, Bing
+Oxford University Press. p. 1435--1440. 2009
+                    </p>
+<p>
+    [2]2016,Influence of the implementation of the universal two-child policy on demographic structure and population spatial distribution in China
+Kaiyong, WANG and Jun, DING and Fuyuan, WANG
+p. 1305--1316. 2016
 
+</p>
+                    <p>
+    [3]2017,The impact of the state's abortion policy on induced abortion among married women in China: a mixed methods study
+Wang, Cuntong
+Taylor \& Francis. p. 316--339. 2017
+
+</p>
+                    <p>
+    [4]2018,National Bureau of statistics of China
+Yearbook, China Statistical and others
+2018
+
+</p>
+                    <p>
+    [5]2002,Analysis of Induced Abortion of Chinese Women
+Qiao Xiaochun
+p. 16--25. 2002
+
+</p>
+                    <p>
+    [6]2017,A qualitative exploration of perceptions and experiences of contraceptive use, abortion and post-abortion family planning services (PAFP) in three provinces in China
+Che, Yan and Dusabe-Richards, Esther and Wu, Shangchun and Jiang, Yi and Dong, Xiaojing and Li, Jian and Zhang, Wei-Hong and Temmerman, Marleen and Tolhurst, Rachel
+BioMed Central. p. 113. 2017
+
+</p>
+                    <p>
+    [7]2018,Food consumption patterns of Chinese urban and rural residents based on CHNS and comparison with the data of National Bureau of Statistics
+XIN, LJ and LI, PH
+p. 75--84. 2018
+
+</p>
                 </div>
             </div>
 
@@ -140,7 +202,8 @@
     <script src="https://cdn.pydata.org/bokeh/release/bokeh-tables-1.3.1.min.js"></script>
     <script src="https://cdn.pydata.org/bokeh/release/bokeh-api-1.3.1.min.js"></script>
         {{script | safe}}
-
+{#"{%static "favicon.ico"  %}"#}
+<script type="text/javascript" src="{% static "graph/js/bibtextohtml.js" %}"></script>
 {#    <script src="{% static 'graph/js/sticky.js' %}"></script>#}
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
