@@ -66,7 +66,7 @@ def graph(request):
     # Store components
     # script, div = components(plot)
     # script, (p1div, p2div, p3div) = components((plot, column(p,select), p4))
-    script, (p1div, p2div, p3div) = components((p0, p4, p4))
+    script, (p1div, p2div, p3div) = components((p4, p4, p4))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
