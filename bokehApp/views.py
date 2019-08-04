@@ -54,8 +54,10 @@ def graph(request):
     y_smooth = spl(xvals)  # then evalute for your interpolated points
     p4.line(xvals, y_smooth)
 
-    # p0 = figure()
-    # p0.square(year, abortion, size=5, color='olive', alpha=0.5)
+    p0 = figure()
+    p0.square(year, abortion, size=5, color='olive', alpha=0.5)
+    p3 = figure()
+    p3.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="red")
     # A2, B2, C2 = optimize.curve_fit(f_2, year, abortion)[0]
     # x2 = np.arange(1990, 2016, 0.01)
     # y2 = A2 * x2 * x2 + B2 * x2 + C2
@@ -66,7 +68,7 @@ def graph(request):
     # Store components
     # script, div = components(plot)
     # script, (p1div, p2div, p3div) = components((plot, column(p,select), p4))
-    script, (p1div, p2div, p3div) = components((p4, p4, p4))
+    script, (p1div, p2div, p3div) = components((p4, p0, p3))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
