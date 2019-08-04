@@ -57,24 +57,24 @@ def graph(request):
     # p0 = figure(title="abortion ratio", plot_width=450, plot_height=450)
     # p0.line(x = [1991,1993,1997,2000,2004,2006,2009,2011,2015], y= [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9], line_join='round')
 
-    p4 = figure()
+    p0 = figure(title='Abortion ratio in different years')
     xvals = np.linspace(year[0], year[-1], 100000)
     spl = CubicSpline(year, abortion)  # First generate spline function
     y_smooth = spl(xvals)  # then evalute for your interpolated points
-    p4.line(xvals, y_smooth)
+    p0.line(xvals, y_smooth)
 
 
     A2, B2, C2 = optimize.curve_fit(f_2, year, abortion)[0]
     x2 = np.arange(1990, 2016, 0.01)
     y2 = A2 * x2 * x2 + B2 * x2 + C2
-    p4.line(x2, y2)
+    p0.line(x2, y2, color='red')
 
     # grid = gridplot([plot, p2], p3)
     # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
-    # script, (p1div, p2div, p3div) = components((plot, column(p,select), p4))
-    script, (p1div, p2div, p3div) = components((p4, p8, p9))
+    # script, (p1div, p2div, p3div) = components((plot, column(p,select), p0))
+    script, (p1div, p2div, p3div) = components((p0, p8, p9))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
