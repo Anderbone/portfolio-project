@@ -166,8 +166,8 @@ def years(request):
 
     # p9 = figure()
     # p9.square(year, abortion, size=5, color='olive', alpha=0.5)
-    c1 = RdBu3[2]  # red
-    c2 = RdBu3[0]  # blue
+    c1 = RdBu3[1]  # red
+    c2 = RdBu3[3]  # blue
     p8 = figure(title='Abortion ratio in rural/urban sites')
     source = ColumnDataSource(dict(
         x=[0,1],
@@ -176,9 +176,9 @@ def years(request):
         label=['rural', 'urban']
     ))
     # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
-    p8.vbar(x='x', width=0.5, bottom=0,
+    p8.hbar(y='x', width=0.5, bottom=0,
            # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
-           top='y', color="color", legend='label', source=source)
+           right='y', color="color", legend='label', source=source)
 
     p0 = figure(title='Abortion ratio in different years')
     xvals = np.linspace(year[0], year[-1], 100000)
