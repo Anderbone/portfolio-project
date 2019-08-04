@@ -89,3 +89,39 @@ def background(request):
     script, div = components(plot)
 
     return render(request, 'background.html', {'script': script, 'div': div})
+
+
+def years(request):
+    plot = figure()
+    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+
+    script, div = components(plot)
+
+    return render(request, 'background.html', {'script': script, 'div': div})
+
+
+def education(request):
+    plot = figure()
+    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+
+    script, div = components(plot)
+
+    return render(request, 'background.html', {'script': script, 'div': div})
+
+
+def others(request):
+    plot = figure()
+    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+
+    script, div = components(plot)
+
+    return render(request, 'background.html', {'script': script, 'div': div})
+
+
+def conclusion(request):
+    plot = figure()
+    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+
+    script, div = components(plot)
+
+    return render(request, 'background.html', {'script': script, 'div': div})

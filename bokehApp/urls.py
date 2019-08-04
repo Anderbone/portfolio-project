@@ -11,6 +11,11 @@ urlpatterns = [
     path('', views.graph, name='graph'),
 
     path("background/", views.background, name="background"),
+    path("years/", views.years, name="years"),
+    path("education/", views.education, name="education"),
+    path("others/", views.others, name="others"),
+    path("conclusion/", views.conclusion, name="conclusion"),
+
     # path("combo/", views.combo, name="combo"),
     # path("programming/", views.programming, name="programming"),
     # path("multi_plot/", views.multi_plot, name="multi_plot"),

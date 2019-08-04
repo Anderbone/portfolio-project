@@ -58,16 +58,16 @@
                             <a class="nav-link" href="{% url 'background' %}">Background</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Years, provinces, site</a>
+                            <a class="nav-link" href="{% url 'years' %}">Years, provinces, site</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Education, health, jobs</a>
+                            <a class="nav-link" href="{% url 'education' %}">Education, health, jobs</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Others(community, want baby, son/daughter ratio)</a>
+                            <a class="nav-link" href="{% url 'others' %}">Others(community, want baby, son/daughter ratio)</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Conclusion</a>
+                            <a class="nav-link" href="{% url 'conclusion' %}">Conclusion</a>
                         </li>
 
                     </ul>
@@ -84,8 +84,7 @@
                     <h3>A study on CHNS from 1991 to 2015</h3>
                     <p> by Jiyu yan</p>
                     <hr>
-                    <p> This study is based on data from the China Health and Nutrition Survey(<a href="https://www.cpc.unc.edu/projects/china">CHNS</a> ), with the purpose of exploring the overall induced abortion ratio change and the factors associated with post-abortion women among 18 to 52 years old women with pregnancy history from 1991 to 2015 in 9 provinces in China. Then the education level, health level and other attributes are considered to compare the difference between post-abortion women and non-abortion women.
-                        The project then attempts to identify what behind induced abortion: the strength of policy implementation, variance of education level, rural/urban or other factors.</p>
+                    <p> This study is</p>
                     <div id="homegraph">
                         {{div | safe}}
                     </div>
