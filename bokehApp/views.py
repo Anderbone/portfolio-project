@@ -177,12 +177,37 @@ def education(request):
 
 
 def others(request):
-    plot = figure()
-    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+    c1 = RdBu3[2]  # red
+    c2 = RdBu3[0]  # blue
+    p8 = figure(title='women with health insurance ratio')
+    source = ColumnDataSource(dict(
+        x=[0,1],
+        y=[0.26, 0.19],
+        color=[c1,c2],
+        label=['post-abortion', 'non-post-abortion']
+    ))
+    # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    p8.vbar(x='x', width=0.5, bottom=0,
+           # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
+           top='y', color="color", legend='label', source=source)
 
-    script, div = components(plot)
+    c1 = RdBu3[2]  # red
+    c2 = RdBu3[0]  # blue
+    p9 = figure(title='women with health insurance ratio')
+    source = ColumnDataSource(dict(
+        x=[0,1],
+        y=[1.56, 0.82],
+        color=[c1,c2],
+        label=['post-abortion', 'non-post-abortion']
+    ))
+    # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    p9.vbar(x='x', width=0.5, bottom=0,
+           # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
+           top='y', color="color", legend='label', source=source)
 
-    return render(request, 'others.html', {'script': script, 'div': div})
+    script, (p1div, p2div) = components((p8, p9))
+
+    return render(request, 'others.html', {'script': script, 'div1': p1div, 'div2':p2div})
 
 
 def conclusion(request):
