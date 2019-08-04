@@ -118,8 +118,8 @@ def years(request):
     year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
 
-    p9 = figure()
-    p9.square(year, abortion, size=5, color='olive', alpha=0.5)
+    # p9 = figure()
+    # p9.square(year, abortion, size=5, color='olive', alpha=0.5)
 
     p8 = figure(title='Abortion ratio in rural/urban sites')
     p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
@@ -138,9 +138,11 @@ def years(request):
     p0.line(x2, y2, color='red')
 
 
-    script, (p1div, p2div, p3div) = components((p0, p8, p9))
+    # script, (p1div, p2div, p3div) = components((p0, p8, p9))
+    script, (p1div, p2div, p3div) = components((p0, p8))
 
-    return render(request, 'years.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
+    # return render(request, 'years.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
+    return render(request, 'years.html', {'script': script, 'div1': p1div, 'div2':p2div})
 
 
 def education(request):
