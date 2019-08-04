@@ -52,10 +52,10 @@
                 <nav class="navbar sticky-top bg-light navbar-light" id="sidebar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Overview</a>
+                            <a class="nav-link" href="{% url 'graph' %}">Overview</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Background</a>
+                            <a class="nav-link" href="{% url 'background' %}">Background</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Years, provinces, site</a>
@@ -84,25 +84,15 @@
                     <h3>A study on CHNS from 1991 to 2015</h3>
                     <p> by Jiyu yan</p>
                     <hr>
-                    <p> This study is based on data from the China Health and Nutrition Survey(CHNS), with the purpose of exploring the overall induced abortion ratio change and the factors associated with post-abortion women among 18 to 52 years old women with pregnancy history from 1991 to 2015 in 9 provinces in China. Then the education level, health level and other attributes are considered to compare the difference between post-abortion women and non-abortion women.
-                        The paper then will attempt to identify what behind induced abortion: the strength of policy implementation, variance of education level, rural/urban or other factors</p>
+                    <p> This study is based on data from the China Health and Nutrition Survey(<a href="https://www.cpc.unc.edu/projects/china">CHNS</a> ), with the purpose of exploring the overall induced abortion ratio change and the factors associated with post-abortion women among 18 to 52 years old women with pregnancy history from 1991 to 2015 in 9 provinces in China. Then the education level, health level and other attributes are considered to compare the difference between post-abortion women and non-abortion women.
+                        The project then attempts to identify what behind induced abortion: the strength of policy implementation, variance of education level, rural/urban or other factors.</p>
                     <div id="homegraph">
                         {{div1 | safe}}
                     </div>
                     <hr>
 {#                    <p display:inline-block>#}
                     <p>
-                        what isiisi?We can improve the blog post by adding additional ,
-                        styles and importing google fonts. From google fonts I selected Oswald and Open Sans for use in the blog post.
-                        Bokeh is an interactive visualization library that targets modern web browsers for presentation. Its goal is to provide elegant, concise construction of versatile graphics, and to extend this capability with high-performance interactivity over very large or streaming datasets. Bokeh can help anyone who would like to quickly and easily create interactive plots, dashboards, and data applications.
 
-To get started using Bokeh to make your visualizations, start with the User Guide.
-
-For examples of how you might use Bokeh with your own data, check out the Gallery.
-
-For detailed information about specific Bokeh components, consult the Reference Guide.
-
-If you are interested in contributing to Bokeh, or extending the library, see the Developer Guide.
                     </p>
                       <div>
                         {{div2 | safe}}

@@ -80,3 +80,12 @@ def graph(request):
     # script, div = components(p3)
     # return render(request, 'graph.html', {'script': script, 'div': div})
     return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
+
+
+def background(request):
+    plot = figure()
+    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+
+    script, div = components(plot)
+
+    return render(request, 'starter.html', {'script': script, 'div': div})

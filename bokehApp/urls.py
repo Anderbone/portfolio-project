@@ -10,7 +10,7 @@ urlpatterns = [
     # path('', )
     path('', views.graph, name='graph'),
 
-    # path("starter/", views.starter, name="starter"),
+    path("background/", views.background, name="background"),
     # path("combo/", views.combo, name="combo"),
     # path("programming/", views.programming, name="programming"),
     # path("multi_plot/", views.multi_plot, name="multi_plot"),
