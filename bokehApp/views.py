@@ -114,12 +114,33 @@ def background(request):
 
 
 def years(request):
-    plot = figure()
-    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
 
-    script, div = components(plot)
+    year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
+    abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
 
-    return render(request, 'years.html', {'script': script, 'div': div})
+    p9 = figure()
+    p9.square(year, abortion, size=5, color='olive', alpha=0.5)
+
+    p8 = figure(title='Abortion ratio in rural/urban sites')
+    p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+           top=[7.6, 15.7], color="firebrick")
+
+    p0 = figure(title='Abortion ratio in different years')
+    xvals = np.linspace(year[0], year[-1], 100000)
+    spl = CubicSpline(year, abortion)  # First generate spline function
+    y_smooth = spl(xvals)  # then evalute for your interpolated points
+    p0.line(xvals, y_smooth)
+
+
+    A2, B2, C2 = optimize.curve_fit(f_2, year, abortion)[0]
+    x2 = np.arange(1980, 2020, 0.01)
+    y2 = A2 * x2 * x2 + B2 * x2 + C2
+    p0.line(x2, y2, color='red')
+
+
+    script, (p1div, p2div, p3div) = components((p0, p8, p9))
+
+    return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
 
 
 def education(request):
