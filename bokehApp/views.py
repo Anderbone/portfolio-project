@@ -176,7 +176,7 @@ def years(request):
         label=['rural', 'urban']
     ))
     # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
-    p8.hbar(y='x', width=0.5, bottom=0,
+    p8.hbar(y='x', height=0.5, left=0,
            # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
            right='y', color="color", legend='label', source=source)
 
