@@ -156,10 +156,22 @@ def years(request):
 
 
 def education(request):
-    plot = figure()
-    plot.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="blue")
+    c1 = RdBu3[2]  # red
+    c2 = RdBu3[0]  # blue
+    p8 = figure(title='women with health insurance ratio')
+    source = ColumnDataSource(dict(
+        x=[0,1],
+        y=[56.8, 59.2],
+        color=[c1,c2],
+        label=['post-abortion', 'non-post-abortion']
+    ))
+    # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    p8.vbar(x='x', width=0.5, bottom=0,
+           # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
+           top='y', color="color", legend='label', source=source)
 
-    script, div = components(plot)
+
+    script, div = components(p8)
 
     return render(request, 'education.html', {'script': script, 'div': div})
 
