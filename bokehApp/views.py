@@ -74,6 +74,22 @@ def graph(request):
                       4.79,
                       4.96,
                       ]
+
+    c1 = RdBu3[0]  # red
+    c2 = RdBu3[2]  # blue
+    p9 = figure(title='Abortion ratio in rural/urban sites', plot_width=400,
+                  plot_height=400)
+    source = ColumnDataSource(dict(
+        x=[0,1],
+        y=[7.6, 15.7],
+        color=[c1,c2],
+        label=['rural', 'urban']
+    ))
+    # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    p9.hbar(y='x', height=0.5, left=0,
+           # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
+           right='y', color="color", legend='label', source=source)
+
     p8 = figure(title='Total birth rate and natural growth rate in China' , plot_width=400,
                   plot_height=400,)
     xvals = np.linspace(year[0], year[-1], 100000)
@@ -120,7 +136,7 @@ def graph(request):
     # Store components
     # script, div = components(plot)
     # script, (p1div, p2div, p3div) = components((plot, column(p,select), p0))
-    script, (p1div, p2div, p3div) = components((p0, p8, row(p3,p4)))
+    script, (p1div, p2div, p3div) = components((p0, row(p8,p9), row(p3,p4)))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
