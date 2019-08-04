@@ -29,7 +29,7 @@ from bokeh.palettes import Viridis3
 from bokeh.embed import json_item
 from bokeh.sampledata.iris import flowers
 
-from bokeh.layouts import column
+from bokeh.layouts import column, row
 from bokeh.models import ColumnDataSource, RangeTool
 from bokeh.sampledata.stocks import AAPL
 
@@ -45,14 +45,7 @@ def graph(request):
 
     year = [1991,1993,1997,2000,2004,2006,2009,2011,2015]
     abortion = [22.7,15.2,11.6,13.5,12.2,6.2,10.8,13.1,1.9]
-
-    p9 = figure()
-    p9.square(year, abortion, size=5, color='olive', alpha=0.5)
-    p8 = figure()
-    p8.circle([1, 10, 35, 27], [0, 0, 0, 0], size=20, color="red")
-
-
-    # show(column(p, select))
+    #how(column(p, select))
 
 
     # p0 = figure(title="abortion ratio", plot_width=450, plot_height=450)
@@ -70,12 +63,64 @@ def graph(request):
     y2 = A2 * x2 * x2 + B2 * x2 + C2
     p0.line(x2, y2, color='red')
 
+    total_birth = [19.68, 18.09, 16.57, 14.03, 12.29, 12.09, 11.95, 11.93, 12.07]
+    natural_growth = [12.98,
+                      11.45,
+                      10.06,
+                      7.58,
+                      5.87,
+                      5.28,
+                      4.87,
+                      4.79,
+                      4.96,
+                      ]
+    p8 = figure(title='Total birth rate and natural growth rate in China' , plot_width=400,
+                  plot_height=400,)
+    xvals = np.linspace(year[0], year[-1], 100000)
+    spl = CubicSpline(year, total_birth)  # First generate spline function
+    y_smooth = spl(xvals)  # then evalute for your interpolated points
+    p8.line(xvals, y_smooth, color='red', legend='total birth rate')
+
+    spl = CubicSpline(year, natural_growth)  # First generate spline function
+    y_smooth = spl(xvals)  # then evalute for your interpolated points
+    p8.line(xvals, y_smooth, legend='natural growth rate')
+
+    c1 = RdBu3[2]  # red
+    c2 = RdBu3[0]  # blue
+    p3 = figure(title='Want a baby?', plot_width=200,
+                  plot_height=200)
+    source = ColumnDataSource(dict(
+        x=[0, 1],
+        y=[0.26, 0.19],
+        color=[c1, c2],
+        label=['post-abortion', 'non-post-abortion']
+    ))
+    # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    p3.vbar(x='x', width=0.5, bottom=0,
+            # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
+            top='y', color="color", legend='label', source=source)
+
+    c1 = RdBu3[2]  # red
+    c2 = RdBu3[0]  # blue
+    p4 = figure(title='son/daughter ratio',  plot_width=200,
+                  plot_height=200)
+    source = ColumnDataSource(dict(
+        x=[0, 1],
+        y=[1.56, 0.82],
+        color=[c1, c2],
+        label=['post-abortion', 'non-post-abortion']
+    ))
+    # p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    p4.vbar(x='x', width=0.5, bottom=0,
+            # top=[7.6, 15.7], color="firebrick", legend=('rural', 'urban'))
+            top='y', color="color", legend='label', source=source)
+
     # grid = gridplot([plot, p2], p3)
     # grid = gridplot([[plot, p2], [None, p3]])
     # Store components
     # script, div = components(plot)
     # script, (p1div, p2div, p3div) = components((plot, column(p,select), p0))
-    script, (p1div, p2div, p3div) = components((p0, p8, p9))
+    script, (p1div, p2div, p3div) = components((p0, p8, row(p3,p4)))
     # script, (p1div, p2div, p3div) = components((plot, p, select))
     # script, (p1div, p2div, p3div) = components((plot, p, p3))
     # script, div = components(p3)
