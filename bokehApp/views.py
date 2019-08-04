@@ -65,7 +65,7 @@ def graph(request):
 
 
     A2, B2, C2 = optimize.curve_fit(f_2, year, abortion)[0]
-    x2 = np.arange(1990, 2016, 0.01)
+    x2 = np.arange(1980, 2020, 0.01)
     y2 = A2 * x2 * x2 + B2 * x2 + C2
     p0.line(x2, y2, color='red')
 
