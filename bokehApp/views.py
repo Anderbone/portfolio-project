@@ -123,6 +123,7 @@ def years(request):
 
     p8 = figure(title='Abortion ratio in rural/urban sites')
     p8.vbar(x=['rural', 'urban'], width=0.5, bottom=0,
+    # p8.vbar(x=[0, 1], width=0.5, bottom=0,
            top=[7.6, 15.7], color="firebrick")
 
     p0 = figure(title='Abortion ratio in different years')
