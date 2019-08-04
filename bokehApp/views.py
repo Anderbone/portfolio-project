@@ -139,7 +139,7 @@ def years(request):
 
 
     # script, (p1div, p2div, p3div) = components((p0, p8, p9))
-    script, (p1div, p2div, p3div) = components((p0, p8))
+    script, (p1div, p2div) = components((p0, p8))
 
     # return render(request, 'years.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
     return render(request, 'years.html', {'script': script, 'div1': p1div, 'div2':p2div})
