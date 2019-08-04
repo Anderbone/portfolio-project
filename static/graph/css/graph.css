@@ -6,7 +6,22 @@ body{min-height:100%;margin:0;padding:0;
 
 #sidenav{
     margin-top: 10px;
+    overflow: hidden;
+
 }
+.content {
+  padding: 16px;
+}
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
 #categories{
     margin-top: 10px;
 }
