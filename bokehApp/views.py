@@ -88,4 +88,4 @@ def background(request):
 
     script, div = components(plot)
 
-    return render(request, 'starter.html', {'script': script, 'div': div})
+    return render(request, 'background.html', {'script': script, 'div': div})
