@@ -6,29 +6,8 @@ body{min-height:100%;margin:0;padding:0;
 
 #sidebar{
     margin-top: 10px;
-    overflow: hidden;
 
 }
-#sidebar a {
-  float: left;
-  display: block;
-  /*color: #f2f2f2;*/
-  text-align: center;
-  padding: 14px;
-  text-decoration: none;
-}
-.content {
-  padding: 16px;
-}
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-.sticky + .content {
-  padding-top: 60px;
-}
-
 
 #categories{
     margin-top: 10px;
