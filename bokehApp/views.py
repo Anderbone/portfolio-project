@@ -74,3 +74,31 @@ def graph(request):
     return render(request, 'graph.html', {'script': script, 'div1': p1div, 'div2':p2div, 'div3':p3div})
 
 
+def products(request):
+    shoes = 0
+    belts = 0
+    shirts = 0
+    counts = []
+    items = ["Shoes", "Belts", "Shirts"]
+    prod = Products.objects.values()
+
+    for i in prod:
+        if "Shoes" in i.values():
+            shoes += 1
+        elif ("Belts" in i.values()):
+            belts += 1
+        elif ("Shirts" in i.values()):
+            shirts += 1
+    counts.extend([shoes, belts, shirts])
+
+    plot = figure(x_range=items, plot_height=600, plot_width=600, title="Products",
+                  toolbar_location="right", tools="pan,wheel_zoom,box_zoom,reset, hover, tap, crosshair")
+    plot.title.text_font_size = '20pt'
+
+    plot.xaxis.major_label_text_font_size = "14pt"
+    plot.vbar(items, top=counts, width=.4, color="firebrick", legend="Product Counts")
+    plot.legend.label_text_font_size = '14pt'
+
+    script, div = components(plot)
+
+    return render(request, 'products.html', {'script': script, 'div': div})
